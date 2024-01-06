@@ -4,21 +4,12 @@
     <input v-model="student" type="text" style="font-size: 25px;">
     <button @click="add">Add</button>
   </div>
-  <div v-if="check">
-    <h2>Book List</h2>
+  <div>
     <ul>
-      <li v-for="ret in books">{{ ret }}</li>
+      <li v-for="ret in studentList">{{ ret }}</li>
     </ul>
   </div>
-  <div v-else-if="!check&books.length>3">
-     Read More
-  </div>
-  <div v-else>
-      <h2>Computer List</h2>
-      <ul>
-        <li v-for="ret in computers">{{ ret }}</li>
-      </ul>
-  </div>
+
 </template>
 <script>
 export default{
@@ -35,7 +26,12 @@ export default{
   },
   methods: {
     add(){
-      console.log(this.student);
+      if(this.student.trim() == '' || this.student == undefined) {
+        alert('Please insert a student name');
+        return;
+      }
+      this.studentList.push(this.student);
+      this.student = '';
     }
   }
 }
