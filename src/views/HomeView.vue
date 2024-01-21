@@ -27,7 +27,7 @@ export default{
         alert('Please insert a student name');
         return;
       }
-      this.studentList.push(this.student);
+      this.studentList.push(this.studen);
       this.student = '';
     }
   }
