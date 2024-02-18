@@ -1,6 +1,8 @@
 <template>
     <h1 class="text-2xl">Test Object List</h1>
     <br>
+    Book: <input type="text" class="px-4 py-3 border border-gray-400 rounded" placeholder="book name ">
+    <button class="ml-2 px-4 py-3 border border-gray-400 rounded">Add</button>
     <h3 class="text-xl">Book List</h3>
     -------------------
     <div v-if="unReadBooks.length">
